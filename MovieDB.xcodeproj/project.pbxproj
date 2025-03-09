@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		879BF88F2D7E4EC5008FC8B0 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 879BF88E2D7E4E8D008FC8B0 /* .gitignore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		879BF8382D7B8288008FC8B0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,11 +31,27 @@
 		879BF8272D7B8287008FC8B0 /* MovieDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		879BF8372D7B8288008FC8B0 /* MovieDBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieDBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		879BF8412D7B8288008FC8B0 /* MovieDBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieDBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		879BF88E2D7E4E8D008FC8B0 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		879BF8802D7B9BDC008FC8B0 /* Exceptions for "MovieDB" folder in "MovieDBUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Views/BaseImageView.swift,
+				Views/FilmInfoView.swift,
+				Views/FilmTileView.swift,
+			);
+			target = 879BF8402D7B8288008FC8B0 /* MovieDBUITests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		879BF8292D7B8287008FC8B0 /* MovieDB */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				879BF8802D7B9BDC008FC8B0 /* Exceptions for "MovieDB" folder in "MovieDBUITests" target */,
+			);
 			path = MovieDB;
 			sourceTree = "<group>";
 		};
@@ -79,6 +99,7 @@
 				879BF83A2D7B8288008FC8B0 /* MovieDBTests */,
 				879BF8442D7B8288008FC8B0 /* MovieDBUITests */,
 				879BF8282D7B8287008FC8B0 /* Products */,
+				879BF88E2D7E4E8D008FC8B0 /* .gitignore */,
 			);
 			sourceTree = "<group>";
 		};
@@ -212,6 +233,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				879BF88F2D7E4EC5008FC8B0 /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
