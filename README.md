@@ -1,6 +1,6 @@
 Lértre kell hozni a 
 
-##MovieDB/MovieDB/Secrets.swift file-t
+## MovieDB/MovieDB/Secrets.swift file-t
 
 Tartalmazza:
 
