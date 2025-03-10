@@ -14,7 +14,7 @@ struct FilmTileView: View {
             Text(film.title).frame(width: 150, height: 40)
             BaseImageView(subString: film.poster_path ?? "")
             FilmInfoView(date: film.release_date, rate: film.vote_average)
-        }.padding().background(.regularMaterial).cornerRadius(20).padding(5)
+        }.padding().background(.clear).cornerRadius(20).padding(10).shadow(radius: 5)
     }
 }
 

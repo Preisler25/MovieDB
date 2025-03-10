@@ -26,8 +26,6 @@ struct CircularProgressView: View {
                     )
                 ).frame(width: 70)
                 .rotationEffect(.degrees(-90))
-                // 1
-                .animation(.easeOut, value: progress)
             Text(convertToDisplay(progress: progress))
 
         }

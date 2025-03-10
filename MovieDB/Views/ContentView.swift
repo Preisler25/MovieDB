@@ -14,19 +14,29 @@ struct ContentView: View {
         VStack{
             Text("MovieDB App").font(.largeTitle)
             VStack{
-                Spacer()
                 VStack{
+                    VStack{
+                        HStack{
+                            Text("SortBy:").padding()
+                            Spacer()
+                        }.frame(height: 30)
+                        Picker("SortBy: ", selection: Binding(
+                            get: {filmSettings.sortBy},
+                            set: {
+                                filmSettings.sortBy = $0
+                                Task {
+                                    await filmList.fetchFilms(filmSettings: filmSettings)
+                                }
+                            }
+                        )){
+                            Text("Popularity").tag(SortByEnum.popularity)
+                            Text("Release").tag(SortByEnum.release_date)
+                            Text("Vote").tag(SortByEnum.vote_average)
+                        }.pickerStyle(.segmented).padding().background(.clear).cornerRadius(10).padding().shadow(radius: 5).frame(height: 70)
+
+                    }
                     HStack{
-                        Button(action: {
-                            changeType()
-                        }){
-                            Text(filmSettings.type == FilmTypeEnum.movie ? "Movies" : "TV Shows").font(.title2).padding(5).background().cornerRadius(6)
-                        }
-                        Button(action: {
-                            changeType()
-                        }){
-                            Text(filmSettings.type == FilmTypeEnum.movie ? "Movies" : "TV Shows").font(.title2).padding(5).background().cornerRadius(6)
-                        }
+                        Spacer()
                         Toggle("Adult", isOn: Binding(
                             get: { filmSettings.showAdult },
                             set: {
@@ -35,8 +45,8 @@ struct ContentView: View {
                                     await filmList.fetchFilms(filmSettings: filmSettings)
                                 }
                             }
-                        )).frame(width: 100)
-                    }
+                        )).frame(width: 100).padding()
+                    }.frame(height: 20)
                 }
                 Spacer()
                 ScrollViewReader { scrollView in
@@ -63,11 +73,15 @@ struct ContentView: View {
                             }
                         }
                     }
-                }.frame(height: 500)
+                }.frame(height: 480)
                 Spacer()
                 Spacer()
-            }.background(Color.gray)
-        }
+            }
+        }.background(LinearGradient(gradient: Gradient(
+            colors: [
+                Color.accentColor.opacity(0.2),
+                Color.yellow.opacity(0.2)
+            ]), startPoint: .topLeading, endPoint: .bottomTrailing))
     }
     
     enum changePageType {
