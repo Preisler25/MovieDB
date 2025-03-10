@@ -11,13 +11,18 @@ struct FilmInfoView: View {
     var date: String
     var rate: Double
     var body: some View {
-        VStack{
-            Text(date)
-            Text("\(rate)")
+        HStack{
+            Text(convertDateToDisplay(date: date))
+            CircularProgressView(progress: rate)
         }
+    }
+    
+    func convertDateToDisplay(date: String) -> String {
+        let splitDate: [Substring] = date.split(separator: "-")
+        return splitDate.joined(separator: ".")
     }
 }
 
 #Preview {
-    FilmInfoView(date: "akma", rate: 1.1)
+    FilmInfoView(date: "akma", rate: 0.1)
 }

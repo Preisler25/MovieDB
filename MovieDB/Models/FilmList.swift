@@ -35,7 +35,7 @@ import Observation
             let (data, _) = try await URLSession.shared.data(for: request)
             let decodedResponse = try JSONDecoder().decode(FilmResponse.self, from: data)
             films = decodedResponse.results
-            print("Fetched \(films.count) films.")
+            print("Fetched \(films.count) films. ")
                     
         } catch {
             print("Failed to fetch films: \(error.localizedDescription)")

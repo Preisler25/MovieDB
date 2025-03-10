@@ -11,7 +11,7 @@ struct FilmTileView: View {
     var film: Film
     var body: some View {
         VStack{
-            Text(film.title)
+            Text(film.title).frame(width: 150, height: 40)
             BaseImageView(subString: film.poster_path ?? "")
             FilmInfoView(date: film.release_date, rate: film.vote_average)
         }.padding().background(.regularMaterial).cornerRadius(20).padding(5)
